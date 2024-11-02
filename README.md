@@ -34,5 +34,6 @@ How to create your query
 
 app/graphql/type/query_type.rb
 
-
+How to create a mutation in graphql
+mutation are like CRUD actions, you know it's something that you can change
 
