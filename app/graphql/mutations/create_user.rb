@@ -13,7 +13,7 @@ class Mutations::CreateUser < Mutations::BaseMutation
     new_user = User.new(name:, email:, password:)
 
     if new_user.save
-      { user: new_user, errors: [], count: User.count}
+      { user: new_user, errors: [], count: User.count }
     else
       { user: nil, errors: user.errors.full_messages }
     end

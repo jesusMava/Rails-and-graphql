@@ -8,7 +8,7 @@ class Mutations::Login < Mutations::BaseMutation
     user = User.find_by(email: email)
 
     if user&.authenticate(password)
-      token = JWT.encode({ user_id: user.id }, 'my_secret', 'HS256')
+      token = JWT.encode({ user_id: user.id, email: user.email, password: user.password }, 'my_secret', 'HS256')
       { token: token }
     else
       raise GraphQL::ExecutionError, "Invalid email or password"
