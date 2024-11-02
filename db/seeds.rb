@@ -11,7 +11,8 @@
 10.times do |n|
   user = User.create!(
     email: "#{n}@gmail.com",
-    name: "#{n}user"
+    name: "#{n}user",
+    password: "#{n}jesus"
   )
 
   Post.create(
