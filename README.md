@@ -22,3 +22,17 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+How to create an object using graphql
+
+'rails g graphql:object name_of_your_object'
+the object usually is a model
+this will create a type in 'graphql/types/name_of_your_object'
+
+How to create your query
+
+app/graphql/type/query_type.rb
+
+
+
