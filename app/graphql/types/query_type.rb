@@ -19,5 +19,13 @@ module Types
     def user(id:)
       User.find(id)
     end
+
+    field :me, Types::UserType, null: true do
+      argument :id, ID, required: true
+    end
+
+    def me(id:)
+      User.find(id)
+    end
   end
 end
