@@ -21,3 +21,20 @@
     content: "#{n} content"
   )
 end
+
+PROJECT_TITLES = 10.times.map { Faker::Internet.domain_word }
+SPLIT = 0.4
+OFFSET = PROJECT_TITLES.length * SPLIT
+
+PROJECT_USERS = {
+  'jesus122@gmail.com' => PROJECT_TITLES[0, OFFSET],
+  'jesus2222@gmail.com' => PROJECT_TITLES[OFFSET..-1]
+}
+
+PROJECT_USERS.each do |email, project|
+  user = User.new(email: email, password: 'secret')
+  project.each {|title| user.projects.build(title: title)}
+  user.save
+end
+
+puts PROJECT_TITLES
