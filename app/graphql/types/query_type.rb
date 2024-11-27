@@ -21,11 +21,15 @@ module Types
     end
 
     field :me, Types::UserType, null: true do
+      description "A simple query about me"
       argument :id, ID, required: true
     end
 
     def me(id:)
-      User.find(id)
+      # User.find(id)
+      # Rails.logger.info "jesus share Context: #{context.inspect}"
+      # user = context[:current_user]
+      # context[:current_user].projects
     end
   end
 end
